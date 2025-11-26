@@ -8,7 +8,7 @@ export default function Layout() {
     resolver: zodResolver(createChurchSchema),
     defaultValues: {
       name: "",
-      pastorName: "",
+      code: "",
       photoUri: "",
       cep: "",
       street: "",

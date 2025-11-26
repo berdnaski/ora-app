@@ -77,11 +77,11 @@ export default function Step1() {
                 <Ionicons name="person-outline" size={18} color="#DBCCCC" />
                 <Controller
                   control={control}
-                  name="pastorName"
+                  name="code"
                   render={({ field: { onChange, onBlur, value } }) => (
                     <TextInput
                       className="flex-1 text-[#DBCCCC] text-[12px] ml-3 h-[35px]"
-                      placeholder="Insira o nome do pastor"
+                      placeholder="Insira o código de identificação da igreja."
                       placeholderTextColor="#DBCCCC"
                       value={value ?? ""}
                       onChangeText={onChange}

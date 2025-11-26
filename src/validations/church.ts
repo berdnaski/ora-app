@@ -2,11 +2,7 @@ import { z } from "zod";
 
 export const createChurchSchema = z.object({
   name: z.string().trim().min(2, "Informe o nome da igreja"),
-  pastorName: z
-    .string()
-    .trim()
-    .min(2, "Informe o nome do pastor")
-    .or(z.literal("")),
+  code: z.string().trim().min(2, "Código obrigatório"),
   photoUri: z.string().url("URL inválida").or(z.literal("")).optional(),
   cep: z.string().regex(/^\d{5}-\d{3}$/, "CEP inválido"),
   street: z.string().min(2, "Rua obrigatória"),
@@ -19,7 +15,7 @@ export const createChurchSchema = z.object({
 export type CreateChurchForm = z.infer<typeof createChurchSchema>;
 export const step1Schema = createChurchSchema.pick({
   name: true,
-  pastorName: true,
+  code: true,
   photoUri: true,
 });
 export const step2Schema = createChurchSchema.pick({
